@@ -1,5 +1,4 @@
-import React from 'react';
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
   return (

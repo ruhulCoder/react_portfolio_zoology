@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Hero = () => {
   return (
     <section className="relative py-20 bg-gradient-to-b from-emerald-800 to-emerald-900 text-white">

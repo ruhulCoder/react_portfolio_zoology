@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './index.css';
 
 // Import components
@@ -22,12 +22,12 @@ export function App() {
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+        if (!targetId || targetId === '#') return;
         
-        const targetElement = document.querySelector(targetId);
+        const targetElement = document.querySelector<HTMLElement>(targetId);
         if (targetElement) {
           window.scrollTo({
             top: targetElement.offsetTop - 80,

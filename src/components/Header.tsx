@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
