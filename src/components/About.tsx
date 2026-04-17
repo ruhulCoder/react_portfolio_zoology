@@ -9,19 +9,15 @@ const About = () => {
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
           <div className="p-8">
             <p className="text-gray-700 leading-relaxed mb-6">
-              I'm a passionate zoology student with a deep fascination for wildlife and ecosystem conservation. My journey in the field of zoology began during childhood with countless hours spent observing local wildlife and reading books about animals from around the world.
+              As a passionate Neuro-oncology researcher, I investigate the intricate biology of brain tumors, with a focus on glioblastoma dynamics, including tumor heterogeneity, plasticity, and the tumor microenvironment to unravel the pathways driving progression and resistance.
             </p>
             
             <p className="text-gray-700 leading-relaxed mb-6">
-              Currently pursuing my Bachelor's degree in Zoology with a focus on conservation biology and animal behavior. I'm particularly interested in how animals adapt to changing environments and the crucial role of biodiversity in maintaining healthy ecosystems.
-            </p>
-            
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Outside of academics, I volunteer at the local wildlife rehabilitation center and participate in citizen science projects tracking migratory species in our region. I believe that understanding animal behavior and biology is key to addressing the conservation challenges we face today.
+              My work bridges neuro-oncology and cognitive neuroscience, exploring biology-to-behavior links in neuro-developmental disorders and tumor-induced cognitive impairments, mediated by cell signaling, to pioneer targeted therapies that mitigate neurological decline, enhance survival, and improve quality of life.
             </p>
             
             <p className="text-gray-700 leading-relaxed">
-              My goal is to contribute to the field through rigorous research and public education, helping to create a world where humans and wildlife can thrive together.
+              As a driven, curious, and compassionate research scholar, I'm committed to translating cutting-edge insights into innovative treatments for patients with brain cancer.
             </p>
           </div>
         </div>

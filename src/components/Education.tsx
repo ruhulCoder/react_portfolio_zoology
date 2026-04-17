@@ -4,30 +4,20 @@ const Education = () => {
       degree: "Master of Science in Zoology",
       institution: "Aligarh Muslim University",
       period: "2017 - 2019",
+      location: "Aligarh, Uttar Pradesh, India",
       description: "Focusing on conservation biology, animal behavior, and ecological research methods.",
-      courses: ["Animal Physiology", "Evolutionary Biology", "Wildlife Conservation", "Field Research Methods"]
-    },
-    {
-      degree: "Research Internship",
-      institution: "National Wildlife Research Center",
-      period: "Summer 2024",
-      description: "Participated in field studies tracking migratory patterns of endangered bird species.",
-      courses: []
+      courses: ["Animal Physiology", "Evolutionary Biology", "Wildlife Conservation", "Field Research Methods"],
+      logo: "amu.jpg"
     },
     {
       degree: "Bachelor of Science in Zoology",
       institution: "Aligarh Muslim University",
       period: "2014 - 2017",
+      location: "Aligarh, Uttar Pradesh, India",
       description: "Focusing on conservation biology, animal behavior, and ecological research methods.",
-      courses: ["Animal Physiology", "Evolutionary Biology", "Wildlife Conservation", "Field Research Methods"]
-    },
-    // {
-    //   degree: "Associate's Degree in Biology",
-    //   institution: "Greenfield Community College",
-    //   period: "2020 - 2022",
-    //   description: "Foundation studies in biological sciences with honors. GPA: 3.9/4.0.",
-    //   courses: ["General Biology", "Ecology", "Organic Chemistry", "Scientific Writing"]
-    // }
+      courses: ["Animal Physiology", "Evolutionary Biology", "Wildlife Conservation", "Field Research Methods"],
+      logo: "amu.jpg"
+    }
   ];
 
   return (
@@ -38,19 +28,28 @@ const Education = () => {
         </h2>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative border-l-4 border-emerald-600 ml-6 pl-8 pb-6">
+          <div className="space-y-8">
             {educationData.map((item, index) => (
-              <div key={index} className="mb-12 relative">
-                <div className="absolute -left-14 mt-1.5 h-6 w-6 rounded-full border-4 border-emerald-600 bg-white"></div>
-                <div className="bg-stone-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div key={index} className="flex items-start gap-6 bg-stone-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-600 bg-white flex items-center justify-center">
+                    <img 
+                      src={`/assets/${item.logo}`} 
+                      alt={item.institution} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="flex-1">
                   <h3 className="text-xl font-bold text-emerald-700">{item.degree}</h3>
-                  <p className="text-gray-600 font-medium">{item.institution}</p>
-                  <p className="text-amber-600 font-medium mb-3">{item.period}</p>
-                  <p className="text-gray-700 mb-3">{item.description}</p>
+                  <p className="text-gray-800 font-semibold">{item.institution}</p>
+                  <p className="text-amber-600 font-medium text-sm mb-2">{item.period}</p>
+                  <p className="text-gray-600 text-sm mb-2">{item.location}</p>
+                  <p className="text-gray-700 text-sm mb-3">{item.description}</p>
                   
                   {item.courses.length > 0 && (
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Key Courses:</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 text-sm">Key Courses:</h4>
                       <div className="flex flex-wrap gap-2">
                         {item.courses.map((course, courseIndex) => (
                           <span key={courseIndex} className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm">

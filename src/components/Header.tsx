@@ -18,9 +18,9 @@ const Header = () => {
         <div className="hidden md:flex space-x-6">
           <a href="#about" className="hover:text-amber-200 transition-colors">About</a>
           <a href="#education" className="hover:text-amber-200 transition-colors">Education</a>
-          <a href="#research" className="hover:text-amber-200 transition-colors">Research</a>
-          <a href="#projects" className="hover:text-amber-200 transition-colors">Projects</a>
-          <a href="#skills" className="hover:text-amber-200 transition-colors">Skills</a>
+          <a href="#experience" className="hover:text-amber-200 transition-colors">Experience</a>
+          <a href="#certifications" className="hover:text-amber-200 transition-colors">Certifications</a>
+          <a href="#volunteering" className="hover:text-amber-200 transition-colors">Volunteering</a>
           <a href="#contact" className="hover:text-amber-200 transition-colors">Contact</a>
         </div>
         
@@ -37,9 +37,9 @@ const Header = () => {
           <div className="flex flex-col space-y-2">
             <a href="#about" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>About</a>
             <a href="#education" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Education</a>
-            <a href="#research" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Research</a>
-            <a href="#projects" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Projects</a>
-            <a href="#skills" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Skills</a>
+            <a href="#experience" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Experience</a>
+            <a href="#certifications" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Certifications</a>
+            <a href="#volunteering" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Volunteering</a>
             <a href="#contact" className="py-2 hover:text-amber-200 transition-colors" onClick={toggleMobileMenu}>Contact</a>
           </div>
         </nav>

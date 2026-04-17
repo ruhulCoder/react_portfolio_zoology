@@ -6,9 +6,9 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Education from './components/Education';
-import Research from './components/Research';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Certifications from './components/Certifications';
+import Volunteering from './components/Volunteering';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -49,9 +49,9 @@ export function App() {
         <Hero />
         <About />
         <Education />
-        <Research />
-        <Projects />
-        <Skills />
+        <Experience />
+        <Certifications />
+        <Volunteering />
         <Contact />
       </main>
       <Footer />

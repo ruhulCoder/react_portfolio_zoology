@@ -9,7 +9,7 @@ const Footer = () => {
             <h2 className="text-xl font-bold">
               <span className="text-amber-300">Intezar</span> Ali
             </h2>
-            <p className="text-emerald-200 text-sm mt-1">Zoology Student</p>
+            <p className="text-emerald-200 text-sm mt-1">Neuro-oncology Researcher</p>
           </div>
           
           <div className="text-center md:text-right">
@@ -26,9 +26,9 @@ const Footer = () => {
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-emerald-200">
             <a href="#about" className="hover:text-amber-300 transition-colors">About</a>
             <a href="#education" className="hover:text-amber-300 transition-colors">Education</a>
-            <a href="#research" className="hover:text-amber-300 transition-colors">Research</a>
-            <a href="#projects" className="hover:text-amber-300 transition-colors">Projects</a>
-            <a href="#skills" className="hover:text-amber-300 transition-colors">Skills</a>
+            <a href="#experience" className="hover:text-amber-300 transition-colors">Experience</a>
+            <a href="#certifications" className="hover:text-amber-300 transition-colors">Certifications</a>
+            <a href="#volunteering" className="hover:text-amber-300 transition-colors">Volunteering</a>
             <a href="#contact" className="hover:text-amber-300 transition-colors">Contact</a>
           </nav>
         </div>
