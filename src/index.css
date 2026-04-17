@@ -1,7 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base ─────────────────────────────────────────────── */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-forest-800: #10532e;
+  --color-amber-400:  #fbbf24;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #faf8f5;
+  color: #1c1c1c;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar               { width: 6px; }
+::-webkit-scrollbar-track         { background: #f0faf4; }
+::-webkit-scrollbar-thumb         { background: #4aba7e; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover   { background: #10532e; }
+
+/* ─── Typography helpers ────────────────────────────────── */
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+
+/* ─── Section heading decoration ───────────────────────── */
+.section-title {
+  @apply font-display text-3xl md:text-4xl font-bold text-center text-emerald-800;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  border-radius: 9999px;
+}
+
+/* ─── Wave SVG dividers ─────────────────────────────────── */
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-bottom svg { display: block; }
+
+/* ─── Opacity animation helpers ─────────────────────────── */
+.opacity-0  { opacity: 0; }
+
+/* ─── Card base ─────────────────────────────────────────── */
+.card-nature {
+  @apply bg-white rounded-2xl shadow-card transition-all duration-300 overflow-hidden;
+  border-left: 4px solid transparent;
+}
+
+.card-nature:hover {
+  @apply shadow-card-hover -translate-y-1;
+  border-left-color: #4aba7e;
+}
+
+/* ─── Timeline connector ──────────────────────────────────  */
+.timeline-item {
+  position: relative;
+}
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 31px;        /* center of 64px logo */
+  top: 80px;
+  bottom: -32px;
+  width: 2px;
+  background: linear-gradient(to bottom, #4aba7e 0%, transparent 100%);
+}
+
+/* ─── Glow button ─────────────────────────────────────────── */
+.btn-glow {
+  @apply relative overflow-hidden;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 24px rgba(251, 191, 36, 0.5);
+  transform: translateY(-2px);
+}
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.btn-glow:hover::after {
+  transform: translateX(100%);
+}
+
+/* ─── Nature leaf accent ──────────────────────────────────── */
+.leaf-accent::before {
+  content: '🌿';
+  margin-right: 0.4rem;
+  font-size: 0.85em;
+}
+
+/* ─── Backdrop blur support fallback ─────────────────────── */
+@supports not (backdrop-filter: blur(12px)) {
+  .backdrop-blur-md { background-color: rgba(7, 42, 24, 0.96); }
 }

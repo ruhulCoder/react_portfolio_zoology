@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './index.css';
 
 // Import components
@@ -13,37 +13,16 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export function App() {
-  useEffect(() => {
-    // Add Inter font
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (!targetId || targetId === '#') return;
-        
-        const targetElement = document.querySelector<HTMLElement>(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+  const [showTop, setShowTop] = useState(false);
 
-    return () => {
-      // Cleanup
-    };
+  useEffect(() => {
+    const handleScroll = () => setShowTop(window.scrollY > 400);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen bg-earth-50">
       <Header />
       <main>
         <Hero />
@@ -55,20 +34,27 @@ export function App() {
         <Contact />
       </main>
       <Footer />
-      
-      {/* Back to top button */}
-      <a 
-        href="#" 
-        className="fixed bottom-6 right-6 bg-emerald-700 hover:bg-emerald-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-colors z-50"
-        onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+
+      {/* Back to top button — only visible after scrolling */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-glow-forest transition-all duration-300 group
+          bg-gradient-to-br from-emerald-600 to-teal-700 hover:from-amber-400 hover:to-amber-500
+          ${showTop ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}
+        `}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-white group-hover:text-emerald-900 transition-colors"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
         </svg>
-      </a>
+      </button>
     </div>
   );
 }
