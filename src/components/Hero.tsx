@@ -20,7 +20,7 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 py-20">
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <div className="flex flex-col justify-center md:flex-row items-center gap-10 md:gap-16">
 
           {/* ── Profile photo ── */}
           <div
